@@ -34,7 +34,7 @@ async def search_item(session: Session, orm_cls: typing.Type[Advertisement], ite
 
 # Получение всех записей из бд по автору
 async def search_title(session: Session, orm_cls: typing.Type[Advertisement], title: str):
-    total = await session.scalars(select(orm_cls).where(orm_cls.title == title))
+    total = await session.execute(select(orm_cls).where(orm_cls.title == title))
     return total
 
 

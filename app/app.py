@@ -34,9 +34,9 @@ async def get_adv_by_id(session: SessionDependency, advertisement_id: int):
 # Получение объявления по полю title
 @app.get("/v1/advertisement_title/", response_model=List[schema.GetAdvertisementResponse])
 async def get_adv_by_title(session: SessionDependency, title: str):
-    total = await search_title(session, Advertisement, title)
-    # return [i.dict for i in total]
-    return [total.first().dict,]
+    total = (await search_title(session, Advertisement, title)).scalars().unique().all()
+    return [i.dict for i in total]
+    # return [total.first().dict,]
 
 
 # Получение объявления по полю title
