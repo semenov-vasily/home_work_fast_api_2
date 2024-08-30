@@ -93,12 +93,12 @@ import requests
 
 
 """-----Получение объявления по полю title токен юзера не нужен (юзер может быть не авторизован)---"""
-response = requests.get('http://127.0.0.1:8000/v1/advertisement_title?title=advertisement_1')
-print(response.json())
-print(response.status_code)
+# response = requests.get('http://127.0.0.1:8000/v1/advertisement_title?title=advertisement_1')
+# print(response.json())
+# print(response.status_code)
 
 
 """-----Получение объявления по полю title токен юзера не нужен (юзер может быть не авторизован)---"""
-response = requests.get('http://127.0.0.1:8070/v1/advertisement_title_2?title=advertisement_1')
+response = requests.get('http://127.0.0.1:8000/v1/advertisement_title_2?title=advertisement_1')
 print(response.json())
 print(response.status_code)
